@@ -44,6 +44,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnEkle = new System.Windows.Forms.Button();
             this.lstKitaplar = new System.Windows.Forms.ListBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +138,7 @@
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(139, 20);
             this.txtISBN.TabIndex = 10;
+            this.txtISBN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtISBN_KeyPress);
             // 
             // txtTur
             // 
@@ -169,7 +171,7 @@
             // btnEkle
             // 
             this.btnEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEkle.Location = new System.Drawing.Point(180, 289);
+            this.btnEkle.Location = new System.Drawing.Point(40, 299);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(99, 37);
             this.btnEkle.TabIndex = 15;
@@ -184,12 +186,25 @@
             this.lstKitaplar.Name = "lstKitaplar";
             this.lstKitaplar.Size = new System.Drawing.Size(315, 264);
             this.lstKitaplar.TabIndex = 16;
+            this.lstKitaplar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstKitaplar_MouseDoubleClick);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(180, 299);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(99, 37);
+            this.btnGuncelle.TabIndex = 17;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.lstKitaplar);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.dateTimePicker1);
@@ -232,6 +247,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.ListBox lstKitaplar;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }
 
