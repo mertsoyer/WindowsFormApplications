@@ -28,6 +28,10 @@ namespace OOP_Intro.Models
                     _stokMiktari = value;
                     mesaj = "Kritik stok";
                 }
+                else
+                {
+                    _stokMiktari =value;
+                }
 
             }
         }
@@ -47,6 +51,10 @@ namespace OOP_Intro.Models
                     UzatilmisGarantiVarmi = true;
                     MessageBox.Show("uzatılmış garanti var");
                 }
+                else
+                {
+                    _garantiSuresi = value;
+                }
 
             }
         }
@@ -63,8 +71,13 @@ namespace OOP_Intro.Models
                 if (DevamDurumu == true && value == true)
                 {
                     _teshirUrunuMu = value;
-                    GarantiSureOpsiyonluIndırım(0, Fiyati,30) ;
+                    GarantiSureOpsiyonluIndırım(0, Fiyati, 30);
 
+                }
+
+                else
+                {
+                    _teshirUrunuMu=value;
                 }
             }
         }
@@ -85,11 +98,15 @@ namespace OOP_Intro.Models
                     _devamDurumu = value;
                     mesaj = "Ürün satışı yok. Ürün satılamaz";
                 }
+                else
+                {
+
+                }
             }
 
         }
 
-     
+
         public decimal GarantiSureOpsiyonluIndırım(int garantiSuresi, decimal fiyat, int indirimYuzdesi)
         {
             decimal sonuc = 0;
@@ -101,8 +118,8 @@ namespace OOP_Intro.Models
             }
             else if (indirimYuzdesi != 0)
             {
-                indirimMiktari= fiyat * 30 / 100;
-                sonuc= fiyat - indirimMiktari;
+                indirimMiktari = fiyat * 30 / 100;
+                sonuc = fiyat - indirimMiktari;
             }
 
 

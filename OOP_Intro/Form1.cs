@@ -34,6 +34,8 @@ namespace OOP_Intro
             Temizle();
         }
       
+
+        // You can 
         public void Temizle()
         {
             foreach (var item in this.Controls)
