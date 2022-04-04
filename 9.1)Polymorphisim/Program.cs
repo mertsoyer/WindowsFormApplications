@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _10_OOP_Basic_Sample
+namespace _9._1_Polymorphisim
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace _10_OOP_Basic_Sample
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(new Form1());
         }
     }
 }

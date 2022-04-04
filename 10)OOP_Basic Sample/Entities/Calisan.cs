@@ -8,6 +8,11 @@ namespace _10_OOP_Basic_Sample.Entities
 {
     public class Calisan:Kisi
     {
+
+        public Calisan()
+        {
+
+        }
         public Calisan(string adSoyad, string unvani)
         {
             Unvani = unvani;

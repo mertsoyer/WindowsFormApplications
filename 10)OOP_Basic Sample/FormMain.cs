@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10_OOP_Basic_Sample.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -101,6 +102,52 @@ namespace _10_OOP_Basic_Sample
             foreach (Form childForm in MdiChildren)
             {
                 childForm.Close();
+            }
+        }
+
+        private void yeniÇalışanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CocukFormAc(new FormCalisan());
+        }
+
+        /// <summary>
+        /// formun ıcınde form acmak ıcın ( tab menude alt baslıkları acmak ıcın ) 
+        /// </summary>
+        /// <param name="cocukForum"></param>
+        void CocukFormAc(Form cocukForum)
+        {
+            foreach (Form item in this.MdiChildren)
+            {
+                if (item.Name==cocukForum.Name)
+                {
+                    item.BringToFront();
+                    return;
+                }
+            }
+
+            cocukForum.MdiParent= this;
+            cocukForum.Show();
+        }
+
+        private void çalışanlarıListeleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CocukFormAc(new FormCalisanListele());
+        }
+
+
+        public void TumListViewleriGuncelle()
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form.Name=="FormCalisanListele")
+                {
+                    (form as FormCalisanListele).VeriyiCek();
+                    return;
+                }
+                if (true)
+                {
+
+                }
             }
         }
     }
