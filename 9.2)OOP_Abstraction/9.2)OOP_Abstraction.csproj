@@ -51,6 +51,15 @@
     <Compile Include="Classlar\MuzikAleti.cs" />
     <Compile Include="Classlar\Muzisyen.cs" />
     <Compile Include="Classlar\YanFulut.cs" />
+    <Compile Include="Corba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Corba.Designer.cs">
+      <DependentUpon>Corba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Corba_Classlar\Corba.cs" />
+    <Compile Include="Corba_Classlar\Domates.cs" />
+    <Compile Include="Corba_Classlar\Mercimek.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Corba.resx">
+      <DependentUpon>Corba.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

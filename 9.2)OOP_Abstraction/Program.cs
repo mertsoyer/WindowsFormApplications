@@ -16,7 +16,7 @@ namespace _9._2_OOP_Abstraction
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Corba());
         }
     }
 }
