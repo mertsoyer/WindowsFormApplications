@@ -8,25 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _9._6_IEnumarable
+namespace _9._7_Burger_Shop_Order_APP
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-
-
-            Personel personel = new Personel();
-            foreach (string item in personel)
-            {
-                MessageBox.Show(item);
-            }
         }
     }
 }

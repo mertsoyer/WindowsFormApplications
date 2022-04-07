@@ -52,6 +52,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IComparable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IComparable.Designer.cs">
+      <DependentUpon>IComparable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICompareble Class\Ogrenci.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Personel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
