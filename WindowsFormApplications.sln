@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.4)Extension_Method", "9.4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.5)Recursive_Function", "9.5)Recursive_Function\9.5)Recursive_Function.csproj", "{6EA62463-3934-40EB-B4DB-596B96B80BD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.6)IEnumerable", "9.6)IEnumarable\9.6)IEnumerable.csproj", "{B204D42C-F0AB-405F-8B64-B8E84601EA27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{6EA62463-3934-40EB-B4DB-596B96B80BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA62463-3934-40EB-B4DB-596B96B80BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA62463-3934-40EB-B4DB-596B96B80BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B204D42C-F0AB-405F-8B64-B8E84601EA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B204D42C-F0AB-405F-8B64-B8E84601EA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B204D42C-F0AB-405F-8B64-B8E84601EA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B204D42C-F0AB-405F-8B64-B8E84601EA27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
