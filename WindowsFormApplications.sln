@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.2)OOP_Abstraction", "9.2)
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.3)OOP_Interface", "9.3)OOP_Interface\9.3)OOP_Interface.csproj", "{C608F134-EE0C-4DC9-849A-368BBEE6A1E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.4)Extension_Method", "9.4)Extension_Method\9.4)Extension_Method.csproj", "{923C8E41-CA34-4CA3-88E2-461A015D0294}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{C608F134-EE0C-4DC9-849A-368BBEE6A1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C608F134-EE0C-4DC9-849A-368BBEE6A1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C608F134-EE0C-4DC9-849A-368BBEE6A1E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923C8E41-CA34-4CA3-88E2-461A015D0294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923C8E41-CA34-4CA3-88E2-461A015D0294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923C8E41-CA34-4CA3-88E2-461A015D0294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923C8E41-CA34-4CA3-88E2-461A015D0294}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
