@@ -1,0 +1,33 @@
+﻿AppUser
+
+AppUserDetail
+
+Product
+
+Category
+
+Order
+
+OrderDetail
+
+
+---İLİŞKİLER---
+
+one to one 
+
+-AppUser - AppUserDetail
+
+one to many
+
+AppUser - Order // one user has many  orders
+
+Product - Category 
+
+Product - OrderDetail 
+
+Order - OrderDetail
+
+
+many to many
+
+Product - Order 
