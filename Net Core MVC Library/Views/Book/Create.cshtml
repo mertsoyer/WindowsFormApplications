@@ -1,0 +1,29 @@
+﻿@using Net_Core_MVC_Library.DTO
+@model (List<AuthorDto> authors,List<BookTypeDto> bookTypes,Book book) 
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-center">Yeni Kitap Ekle</h3>
+<form method="post" asp-controller="Book" asp-action="Create">
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.Name">İsim</label>
+        <input type="text" class="form-control" asp-for="book.Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.PageCount">Sayfa Sayısı</label>
+        <input type="text" class="form-control" asp-for="book.PageCount" />
+    </div>
+
+     <div class="mb-3">
+        <label class="form-label" asp-for="book.AuthorId">Yazar</label>
+        <select  asp-for="book.AuthorId" asp-items="@(new SelectList(Model.authors,"Id","FullName"))"> </select>
+    </div>
+
+
+
+
+</form>
+

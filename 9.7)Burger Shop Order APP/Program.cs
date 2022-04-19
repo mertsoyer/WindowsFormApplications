@@ -16,7 +16,7 @@ namespace _9._7_Burger_Shop_Order_APP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MDIParent1());
         }
     }
 }

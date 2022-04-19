@@ -1,0 +1,7 @@
+﻿      //Delegate ile bir olay gerçekleştiğinde birden fazla fonksiyonu çağırmak istersen delegate adlı yapıyı kullanırız. Bir dugmeye tıklandıgı zaman birden fazla metodun calısması gibi.
+
+
+        //Delegate oluşturma tanımlama
+        //Orneklendırme ( ınstance)
+        //Çağırma (Invoke)
+   

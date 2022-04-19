@@ -88,7 +88,7 @@
             this.label1.Size = new System.Drawing.Size(154, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "MENÜ SEÇİN";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+        
             // 
             // groupBox1
             // 
@@ -112,7 +112,7 @@
             this.rdKucukBoy.TabStop = true;
             this.rdKucukBoy.Text = "KÜÇÜK";
             this.rdKucukBoy.UseVisualStyleBackColor = true;
-            this.rdKucukBoy.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            
             // 
             // rdOrtaBoy
             // 
@@ -124,7 +124,7 @@
             this.rdOrtaBoy.TabStop = true;
             this.rdOrtaBoy.Text = "ORTA";
             this.rdOrtaBoy.UseVisualStyleBackColor = true;
-            this.rdOrtaBoy.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+      
             // 
             // rdBuyukBoy
             // 

@@ -25,7 +25,7 @@ namespace _7_OOP_Inheritance
         }
 
 
-        private string _brand;
+        //private string _brand;
         public string Brand { get; set; }
         public string IMEI { get; set; }
         public string PhoneType { get; set; }

@@ -1,0 +1,22 @@
+﻿@model BookType
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-center">Add new Author</h3>
+<
+
+<form method="post" asp-controller="BookType" asp-action="Update">
+    <div class="mb-3">
+        <label class="form-label" asp-for="BookName"></label>
+        <input type="text" class="form-control" asp-for="BookName" />
+
+    </div>
+    @*  <div class="mb-3">
+        <label class="form-label" asp-for="">Soyisim</label>
+        <input type="text" class="form-control" asp-for="LastName" />
+
+    </div>*@
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form> 

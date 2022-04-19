@@ -49,7 +49,14 @@
     <Compile Include="Classes\Extra.cs" />
     <Compile Include="Classes\Menu.cs" />
     <Compile Include="Classes\Siparis.cs" />
+    <Compile Include="EkstraMalzeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EkstraMalzeme.Designer.cs">
+      <DependentUpon>EkstraMalzeme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enum Classes\Boyut.cs" />
+    <Compile Include="Fonksiyonlar.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +77,9 @@
     <Compile Include="SiparisOlustur.Designer.cs">
       <DependentUpon>SiparisOlustur.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EkstraMalzeme.resx">
+      <DependentUpon>EkstraMalzeme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>

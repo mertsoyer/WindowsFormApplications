@@ -68,12 +68,12 @@ namespace _9._7_Burger_Shop_Order_APP
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +102,37 @@ namespace _9._7_Burger_Shop_Order_APP
             {
                 childForm.Close();
             }
+        }
+
+        private void ekstraMalzemeEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChildFormAc(new EkstraMalzeme());
+        }
+
+        void ChildFormAc(Form childForm)
+        {
+            foreach (Form item in this.MdiChildren)
+            {
+                if (item.Text==childForm.Text)
+                {
+                    item.Activate();
+                }
+                else
+                {
+                    item.Close();
+                }
+
+
+
+            }
+
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void siparişOluşturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChildFormAc(new SiparisOlustur());
         }
     }
 }

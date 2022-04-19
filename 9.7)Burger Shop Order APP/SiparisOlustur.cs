@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _9._7_Burger_Shop_Order_APP.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Menu = _9._7_Burger_Shop_Order_APP.Classes.Menu;
 
 namespace _9._7_Burger_Shop_Order_APP
 {
@@ -17,24 +19,30 @@ namespace _9._7_Burger_Shop_Order_APP
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        public static List<Menu> menuler = new List<Menu>();
 
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        public static List<Extra> extralar = new List<Extra>();
+   
 
         private void SiparisOlustur_Load(object sender, EventArgs e)
         {
             rdBuyukBoy.Checked = true;
+
+            foreach (Menu item in menuler)
+            {
+                cmbMenu.Items.Add(item);
+            }
+
+            foreach (Extra item in extralar)
+            {
+                flpEkstraMalzemeler.Controls.Add(new CheckBox()
+                {
+                    Text = item.EkstraAdi,
+                    Tag = item,
+                });
+            }
+          
+
         }
     }
 }
