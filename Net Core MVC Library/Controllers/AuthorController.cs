@@ -71,6 +71,11 @@ namespace Net_Core_MVC_Library.Controllers
             applicationDbContext.Authors.Update(author);
             applicationDbContext.SaveChanges();
 
+            //Hard Delete
+            //var silinecek=applicationDbContext.Authors.Find(id);
+            //applicationDbContext.Remove(silinecek);
+            //applicationDbContext.SaveChanges();
+
             return RedirectToAction("AuthorList");
         }
     }
