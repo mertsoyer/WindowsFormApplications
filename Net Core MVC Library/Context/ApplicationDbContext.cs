@@ -19,7 +19,10 @@ namespace Net_Core_MVC_Library.Context
             modelBuilder.Entity<Operations>().Ignore(x => x.Id); //Database de bu kolonu yaratma
             modelBuilder.Entity<Operations>().HasKey(x => new{ x.StudentId, x.BookId}); //Primary key 
 
-            //modelBuilder.Entity<Operations>().ToTable("Operasyonlar"); //Tablo adını değiştirme
+            #region Tablo adını değiştirme
+
+            #endregion
+            //modelBuilder.Entity<Operations>().ToTable("Operasyonlar"); 
 
             #region HasColumnName Kolon Adını Değiştiröe
             //HasColumnName

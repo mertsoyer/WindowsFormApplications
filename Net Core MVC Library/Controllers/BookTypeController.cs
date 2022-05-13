@@ -1,12 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Net_Core_MVC_Library.Context;
 using Net_Core_MVC_Library.Models;
+using Net_Core_MVC_Library.RepositoryPattern.Interfaces;
 
 namespace Net_Core_MVC_Library.Controllers
 {
     public class BookTypeController : Controller
     {
         ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+
+        private readonly IRepository<BookType> _bookTypeRepository;
+
+        public BookTypeController(IRepository<BookType> bookTypeRepository)
+        {
+            this._bookTypeRepository = bookTypeRepository;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -14,7 +23,8 @@ namespace Net_Core_MVC_Library.Controllers
 
         public IActionResult BookTypeList()
         {
-            var bookTypes = applicationDbContext.BookTypes.ToList();
+
+            var bookTypes = _bookTypeRepository.GetAll();
             return View(bookTypes);
         }
 
@@ -27,9 +37,25 @@ namespace Net_Core_MVC_Library.Controllers
         [HttpPost]
         public IActionResult Create(BookType bookType)
         {
-            applicationDbContext.BookTypes.Add(bookType);
-            applicationDbContext.SaveChanges();
+            _bookTypeRepository.Add(bookType);
+            //applicationDbContext.BookTypes.Add(bookType);
+            //applicationDbContext.SaveChanges();
 
+            return RedirectToAction("BookTypeList");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var bookType = _bookTypeRepository.GetById(id);
+            return View(bookType);
+        }
+
+
+        [HttpPost]
+        public IActionResult Edit(BookType bookType)
+        {
+            _bookTypeRepository.Update(bookType);
             return RedirectToAction("BookTypeList");
         }
 
@@ -52,9 +78,11 @@ namespace Net_Core_MVC_Library.Controllers
 
         public IActionResult Delete(int id)
         {
-            var silinecek=applicationDbContext.BookTypes.Find(id);
-            applicationDbContext.Remove(silinecek);
-            applicationDbContext.SaveChanges();
+
+            _bookTypeRepository.Delete(id);
+            //var silinecek = applicationDbContext.BookTypes.Find(id);
+            //applicationDbContext.Remove(silinecek);
+            //applicationDbContext.SaveChanges();
 
             return RedirectToAction("BookTypeList");
         }
