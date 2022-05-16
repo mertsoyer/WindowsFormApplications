@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Net_Core_Fundamentals.Data.Context;
 using Net_Core_Fundamentals.Models;
 using System.Diagnostics;
 
@@ -6,6 +7,10 @@ namespace Net_Core_Fundamentals.Controllers
 {
     public class HomeController : Controller
     {
+
+        ApplicationDbContext context = new ApplicationDbContext();
+
+        
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

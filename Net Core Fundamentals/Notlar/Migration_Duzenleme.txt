@@ -1,0 +1,25 @@
+﻿
+1) yeni bir migration oluşturma
+
+add-migration initial
+
+2) oluşturulan migration ile database i güncelleme
+
+update-database
+
+3) yapılan migration listeisini toplu olarak görme
+
+get-migration -> bu işlemin sonucunda applied true olanlar database de uygulanan işlemler, false yazanlar ise henüz update-database komutu yapılmamış migration işlemleri
+
+4) uygulanmamış migration'ı silme
+
+remove-migration -> ile uygulanmamış(applied = false) son migration ı kaldırabiliriz
+
+5) add-migration ve updatade-database yapılmış migration ı kaldırma 
+
+migration adını kopyalayıp -> update-database 20220511083426_fluentapi migration adını  yazıp gönderiyoruz
+
+6) projede migration konumu değiştirme
+
+add-migration initial -outputDir dosya/Yolu
+

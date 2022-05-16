@@ -10,7 +10,13 @@ namespace Net_Core_Fundamentals.Data.Context
         public DbSet<Category> Categories { get; set; } = default!;
         public DbSet<Customer> Customers { get; set; } = default!;
         public DbSet<SaleHistory> SaleHistories { get; set; } = default!;
-        public DbSet<ProductDetail> ProductDetails{ get; set; } = default!;
+        public DbSet<ProductDetail> ProductDetails { get; set; } = default!;
+        public DbSet<ProductCategory> ProductCategories { get; set; } = default!;
+        public DbSet<Employee> Employees { get; set; } = default!; // Employee klası içerisinde yazdığımız FullTimeEmploye ve ParttimeEmoloyee i DB ye aktırıyoruz. Aktardığımız zaman otomatik Employees tablosu içerisinde FullTime ve PartTime olarak oluşacak ayrı tablolar oluşturmayacak. "Table per Hierarchy" 
+        //Eğer bunu ayrı tablolar olarak oluşturmak istiyorsak modelbuilder üzerinden ToTable ile bu tabloları vermemiz gerekir.
+        public DbSet<FullTimeEmployee> FullTimeEmployees{ get; set; } = default!;
+        public DbSet<PartTimeEmployee>PartTimeEmployees { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,6 +25,15 @@ namespace Net_Core_Fundamentals.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            #region Table Per Type -> Employee Classının içinde yazılan classların ayrı bir tablo olarak ayrıştırılma işlemi
+            modelBuilder.Entity<Employee>().ToTable("Employees");
+            modelBuilder.Entity<FullTimeEmployee>().ToTable("FullTimeEmployees");
+            modelBuilder.Entity<PartTimeEmployee>().ToTable("PartTimeEmployees");
+
+            #endregion
+
+
             //---------------------------------------------------RELATIONS-----------------------------------------------------
 
             #region Bire çok ilişki
@@ -32,10 +47,18 @@ namespace Net_Core_Fundamentals.Data.Context
 
             #region Bire bir İlişki
             //product ile product detail in arasında bire bir bir ilişki var ve foreign key productdetail sayfasındaki productId
-            modelBuilder.Entity<Product>().HasOne(x=>x.ProductDetail).WithOne(x=>x.Product).HasForeignKey<ProductDetail>(x => x.ProductId);
+            modelBuilder.Entity<Product>().HasOne(x => x.ProductDetail).WithOne(x => x.Product).HasForeignKey<ProductDetail>(x => x.ProductId);
             #endregion
 
+            #region Çoka çok - Many to Many
+            // Çoka çok ilişkiyi kurmak için oluşturulan ara tablo olan productcategories tablosu üzerinden ilgili ilişkiler ve foreign key ler oluşturuldu
+            modelBuilder.Entity<Product>().HasMany(x => x.ProductCategories).WithOne(x => x.Product).HasForeignKey(x => x.ProductId);
+            modelBuilder.Entity<Category>().HasMany(x => x.ProductCategories).WithOne(x => x.Category).HasForeignKey(x => x.ProductId);
 
+
+            //Primary Key : Product Id ve Category Id de mükerrer / tekrarlı kayıt olmaması adına bu alanları PrimaryKey yaptık.
+            modelBuilder.Entity<ProductCategory>().HasKey(x => new { x.ProductId, x.CategoryId });
+            #endregion
 
             modelBuilder.Entity<Category>().ToTable(/*name:*/"Category",/*schema:*/"db");
 
