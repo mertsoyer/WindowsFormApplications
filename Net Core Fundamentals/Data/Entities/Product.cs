@@ -36,7 +36,8 @@
         /// <summary>
         /// Category ve Product tablarıları arasındaki çoka çok ilişkiyi kurmak için ProductCategory adındaki ara tablo ile ilgili ilişkiyi kuruyoruz
         /// </summary>
-        public List<ProductCategory>ProductCategories { get; set; }
-        public ProductDetail ProductDetail { get; set; }
+        public List<ProductCategory>ProductCategories { get; set; } = default!;
+        public ProductDetail ProductDetail { get; set; } = default!;
+
     }
 }
